@@ -7,9 +7,33 @@ body {
   color: #212121;
   line-height: 1.5;
 }
+p {
+  margin: 0;
+}
+.search-form {
+  margin-bottom: 30px;
+  text-align: center;
+}
 .gallery {
+  display: flex;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  gap: 30px;
   margin-top: 15px;
 }
+.photo-card {
+  gap: 30px;
+}
+.info {
+  display: flex;
+  gap: 8px;
+  margin-left: 2px;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 10px;
+}
+
 .load-more {
   margin-top: 15px;
 }
