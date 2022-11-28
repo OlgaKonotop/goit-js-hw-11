@@ -36,4 +36,13 @@ p {
 
 .load-more {
   margin-top: 15px;
+  /* visibility: hidden; */
+}
+
+.load-more:hover,
+.load-more:focus,
+.form-btn:hover,
+.form-btn:focus {
+  background-color: aqua;
+  color: black;
 }
