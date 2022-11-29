@@ -14,9 +14,15 @@ p {
   margin-bottom: 30px;
   text-align: center;
 }
+.imput-form {
+  padding: 5;
+  border-radius: 10px;
+  color: blue;
+
+  border: 2px solid #1bfab7;
+}
 .gallery {
   display: flex;
-  /* justify-content: center; */
   flex-wrap: wrap;
   gap: 30px;
   margin-top: 15px;
@@ -35,8 +41,23 @@ p {
 }
 
 .load-more {
+  display: flex;
+  align-items: center;
+
   margin-top: 15px;
+
   /* visibility: hidden; */
+}
+
+.form-btn,
+.load-more {
+  padding: 5;
+  background: #1bfab7;
+  border-radius: 10px;
+  color: blue;
+
+  cursor: pointer;
+  border: 2px solid #1bfab7;
 }
 
 .load-more:hover,
@@ -45,4 +66,5 @@ p {
 .form-btn:focus {
   background-color: aqua;
   color: black;
+  border: 2px solid black;
 }

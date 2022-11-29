@@ -40,10 +40,11 @@ async function getUser() {
     const totalHits = resp.data.totalHits;
 
     onMarkup(resp.data.hits);
-    if (pageNumber === 1) {
+    if (pageNumber === 1 && resp.data.hits.length) {
       Notify.success(`Hooray! We found ${totalHits} images.`);
     }
     if (!resp.data.hits.length) {
+      loadMore.setAttribute('hidden', true);
       return Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
