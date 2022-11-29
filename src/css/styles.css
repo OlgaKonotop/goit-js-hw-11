@@ -40,17 +40,21 @@ p {
   font-size: 10px;
 }
 
-.load-more {
-  display: flex;
+.btn--more {
+  display: none;
+
   align-items: center;
 
   margin-top: 15px;
 
   /* visibility: hidden; */
 }
+.is-hidden {
+  display: block;
+}
 
 .form-btn,
-.load-more {
+.btn--more {
   padding: 5;
   background: #1bfab7;
   border-radius: 10px;
@@ -60,8 +64,8 @@ p {
   border: 2px solid #1bfab7;
 }
 
-.load-more:hover,
-.load-more:focus,
+.btn--more:hover,
+.btn--more:focus,
 .form-btn:hover,
 .form-btn:focus {
   background-color: aqua;

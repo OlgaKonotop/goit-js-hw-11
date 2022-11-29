@@ -3,13 +3,16 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const form = document.querySelector('#search-form');
 const gallery = document.querySelector('.gallery');
-const loadMore = document.querySelector('.load-more');
+//const loadMore1 = document.querySelector('.load-more');
+const btnMore = document.querySelector('.btn--more');
 
+console.log(btnMore);
 let searchQuery;
 let pageNumber = 1;
 const countImg = 40;
 
-loadMore.setAttribute('hidden', true);
+//btnMore.setAttribute('hidden', true);
+console.log(btnMore);
 
 form.addEventListener('submit', onSubmitForm);
 
@@ -19,7 +22,6 @@ function onSubmitForm(evt) {
   console.log(searchQuery);
   pageNumber = 1;
   getUser();
-  loadMore.removeAttribute('hidden');
 }
 
 async function getUser() {
@@ -41,23 +43,24 @@ async function getUser() {
 
     onMarkup(resp.data.hits);
     if (pageNumber === 1 && resp.data.hits.length) {
+      btnMore.classList.add('is-hidden');
       Notify.success(`Hooray! We found ${totalHits} images.`);
     }
     if (!resp.data.hits.length) {
-      loadMore.setAttribute('hidden', true);
+      btnMore.classList.remove('is-hidden');
       return Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
     }
 
     if (totalHits <= pageNumber * countImg) {
-      loadMore.setAttribute('hidden', true);
+      btnMore.classList.remove('is-hidden');
       return Notify.warning(
         "We're sorry, but you've reached the end of search results."
       );
     }
 
-    loadMore.addEventListener('click', onLoadMoreBtn);
+    btnMore.addEventListener('click', onLoadMoreBtn);
 
     return;
   } catch (err) {
